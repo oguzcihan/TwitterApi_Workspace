@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="397dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="12dp">
+
+        <TextView
+            android:id="@+id/user_tweet"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+            android:layout_margin="5dp"
+            android:background="#330000"
+            android:freezesText="true"
+            android:padding="10dp"
+            android:text="---"
+            android:textColor="#ffffff" />
+    </ScrollView>
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/userList"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginStart="0dp"-->
+<!--        android:layout_marginEnd="5dp"-->
+<!--        android:layout_marginBottom="-44dp" />-->
+
+</RelativeLayout>

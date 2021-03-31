@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "482435111987",
+    "firebase_url": "https://twitterdemodb-default-rtdb.firebaseio.com",
+    "project_id": "twitterdemodb",
+    "storage_bucket": "twitterdemodb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482435111987:android:2efff1eb95da1ee7f21746",
+        "android_client_info": {
+          "package_name": "com.example.denemesearch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482435111987-oclmf6sb88m3hhhk46m1p5ac3q1lettg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKb59s3xhaWrhX8ynKyGAvLm8H0uuyzj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482435111987-oclmf6sb88m3hhhk46m1p5ac3q1lettg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482435111987:android:399f09c44b568cf3f21746",
+        "android_client_info": {
+          "package_name": "com.example.twitterapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482435111987-oclmf6sb88m3hhhk46m1p5ac3q1lettg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKb59s3xhaWrhX8ynKyGAvLm8H0uuyzj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482435111987-oclmf6sb88m3hhhk46m1p5ac3q1lettg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482435111987:android:f30c91d17c4f04caf21746",
+        "android_client_info": {
+          "package_name": "com.example.twitterdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482435111987-oclmf6sb88m3hhhk46m1p5ac3q1lettg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKb59s3xhaWrhX8ynKyGAvLm8H0uuyzj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482435111987-oclmf6sb88m3hhhk46m1p5ac3q1lettg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
