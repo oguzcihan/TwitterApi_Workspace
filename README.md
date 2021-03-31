@@ -1,1 +1,1 @@
-# Twitter API kullanılarak geliştirilen uygulamalar.
+Twitter API kullanılarak geliştirilen uygulamalar.
