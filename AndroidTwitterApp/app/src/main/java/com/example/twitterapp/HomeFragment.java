@@ -37,6 +37,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 @SuppressWarnings("ALL")
@@ -44,29 +45,31 @@ public class HomeFragment extends Fragment {
     final String URL = "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=";
     final String APIKEY = "gxGZNWC2MPB0hd94ZbcFxBIx0";
     final String APISECRET = "LhPhGPct9GZu1Ig8yKSUCiDuYXGtu5bBXXNeo34BSJA4hg2YNw";
-    final String bearer_token ="AAAAAAAAAAAAAAAAAAAAAKKKJgEAAAAAVZIrYYGptE0VSFNQH5ubeUjkzMc%3Dua4ieHyDn2LorzmbjxabHWBVf0lTzkJ7VvX4WiqsUo4vckg0Nf";
+    final String bearer_token = "AAAAAAAAAAAAAAAAAAAAAKKKJgEAAAAAVZIrYYGptE0VSFNQH5ubeUjkzMc%3Dua4ieHyDn2LorzmbjxabHWBVf0lTzkJ7VvX4WiqsUo4vckg0Nf";
     ViewGroup viewGroup;
     RecyclerView recyclerView;
-    private List<Tweet>tweets;
+    private List<Tweet> tweets;
     private Adapter adapter;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        viewGroup= (ViewGroup) inflater.inflate(R.layout.fragment_home,container,false);
-        tweets=new ArrayList<>();
+        viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
+        tweets = new ArrayList<>();
         setUpSearchQuery(viewGroup);
         return viewGroup;
     }
 
+    private String user_name = "elonmusk";
     private void setUpSearchQuery(ViewGroup view) {
-        try{
-            String properties="elonmusk&include_rts=1";
-            String searchURL=URL+properties;
+        try {
+            String properties = user_name+"&include_rts=1";
+            String searchURL = URL + properties;
             new HomeFragment.GetFeedTask().execute(bearer_token, searchURL);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            Log.e("Warning","Error"+e.getMessage());
+            Log.e("Warning", "Error" + e.getMessage());
         }
     }
 
@@ -91,12 +94,11 @@ public class HomeFragment extends Fragment {
                 StringBuilder sb = new StringBuilder();
 
                 String line = null;
-                while ((line = reader.readLine()) != null)
-                {
+                while ((line = reader.readLine()) != null) {
                     sb.append(line + "\n");
                 }
                 return sb.toString();
-            }catch (Exception e){
+            } catch (Exception e) {
                 Log.e("GetFeedTask", "Error:" + e.getMessage());
                 return null;
             }
@@ -105,12 +107,26 @@ public class HomeFragment extends Fragment {
         @Override
         protected void onPostExecute(String jsonText) {
 
-          try {
-              TextView txt = (TextView) viewGroup.findViewById(R.id.user_tweet);
-              txt.setText(jsonText);
-          }catch (Exception e){
-              e.getMessage();
-          }
+            try {
+                TextView textt=viewGroup.findViewById(R.id.user_name);
+                textt.setText("Kullanıcı Adı: "+user_name);
+                JSONArray jsonarray = new JSONArray(jsonText);
+                for (int i = 0; i < jsonarray.length(); i++) {
+                    JSONObject jsonobject = jsonarray.getJSONObject(i);
+                    String id = jsonobject.getString("id_str");
+                    String text = jsonobject.getString("text");
+                    Tweet tweet = new Tweet();
+                    tweet.setId(id.toString());
+                    tweet.setTweetText(text.toString());
+                    tweets.add(tweet);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            recyclerView = viewGroup.findViewById(R.id.tweetsListhome);
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+            adapter = new Adapter(getContext(), tweets);
+            recyclerView.setAdapter(adapter);
         }
     }
 

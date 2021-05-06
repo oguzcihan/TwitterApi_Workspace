@@ -88,14 +88,12 @@ public class SearchFragment extends Fragment {
                             database= FirebaseDatabase.getInstance();
                             ref=database.getReference().child("searchKeys").child(encodedSearch);
                             new GetFeedTask().execute(bearer_token, searchURL);
-
                         }catch (Exception e){
                             e.printStackTrace();
                             Log.e("Warning","Error"+e.getMessage());
                         }
                     }else if(searchTerm.length()==0){
                         Toast.makeText(getContext(), "Lütfen aramak için bir şeyler yazın..", Toast.LENGTH_SHORT).show();
-
                     }
                 }
                 return false;
@@ -130,7 +128,6 @@ public class SearchFragment extends Fragment {
                 Log.e("GetFeedTask","Error:" + e.getMessage());
                 return null;
             }
-
         }
 
         @Override
@@ -148,7 +145,6 @@ public class SearchFragment extends Fragment {
                     yazdir=ref.child(tweet.getId().toString());
                     yazdir.setValue(tweet.getTweetText().toString());
 
-
                 }
 
             }catch (Exception e){
@@ -158,8 +154,6 @@ public class SearchFragment extends Fragment {
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
             adapter=new Adapter(getContext(),tweets);
             recyclerView.setAdapter(adapter);
-
-
         }
     }
 
