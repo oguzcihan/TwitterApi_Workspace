@@ -1,6 +1,7 @@
-Twitter API kullanılarak geliştirilen uygulamalar.
+# Applications developed using the Twitter API.
 
-# Android Programming Screenshot 
+
+# Android Programming Screenshot :
 ![](https://github.com/oguzcihan/TwitterApi_Workspace/blob/main/Pic/AndroidSearchTimeline.png)
 ![](https://github.com/oguzcihan/TwitterApi_Workspace/blob/main/Pic/AndroidUserTimeline.png)
 
