@@ -1,3 +1,4 @@
 Twitter API kullanılarak geliştirilen uygulamalar.
 
-![](https://github.com/HaydiKodlayalim/spring-examples/blob/master/resources/imge.png)
+![](https://github.com/TwitterApi_Workspace/Pic/AndroidSearchTimeline.png)
+
